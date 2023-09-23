@@ -1,0 +1,38 @@
+<mat-card class="cards" >
+    <mat-card-header>
+        <mat-card-title>{{ question.description }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-radio-group
+        aria-label="Select an option"
+        (change)="onChange($event.value)"
+      >
+        <mat-radio-button [value]="'answer_a'">{{
+          question.answers.answer_a
+        }}</mat-radio-button>
+        <mat-radio-button [value]="'answer_b'">{{
+          question.answers.answer_b
+        }}</mat-radio-button>
+        <mat-radio-button
+          [value]="'answer_c'"
+          *ngIf="question.answers.answer_c"
+          >{{ question.answers.answer_c }}</mat-radio-button
+        >
+        <mat-radio-button
+          [value]="'answer_d'"
+          *ngIf="question.answers.answer_d"
+          >{{ question.answers.answer_d }}</mat-radio-button
+        >
+        <mat-radio-button
+          [value]="'answer_e'"
+          *ngIf="question.answers.answer_e"
+          >{{ question.answers.answer_e }}</mat-radio-button
+        >
+        <mat-radio-button
+          [value]="'answer_f'"
+          *ngIf="question.answers.answer_f"
+          >{{ question.answers.answer_f }}</mat-radio-button
+        >
+      </mat-radio-group>
+    </mat-card-content>
+  </mat-card>
