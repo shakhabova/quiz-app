@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultsComponent implements OnInit {
   public value?: string;
-
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {

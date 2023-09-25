@@ -12,13 +12,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { ResultsComponent } from './results/results.component';
 import { QuestionsListComponent } from './questions-list/questions-list.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { TestsListComponent } from './tests-list/tests-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
     ResultsComponent,
-    QuestionsListComponent
+    QuestionsListComponent,
+    TestsListComponent
   ],
   imports: [
     BrowserModule,

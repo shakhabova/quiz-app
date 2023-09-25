@@ -10,7 +10,7 @@ export class QuestionsService {
   public questions: Question[] = [
     {
       id: 1,
-      description: 'It1 a great movie. I have ... tha movie many times',
+      description: 'It`s a great movie. I have ... tha movie many times',
       multiple_correct_answers: true,
       answers: {
         answer_a: 'saw',
