@@ -23,3 +23,10 @@ export interface CorrectAnswers {
   answer_e_correct?: boolean;
   answer_f_correct?: boolean;
 }
+
+export interface Test {
+id: number;
+name: string;
+imageUrl: string;
+questions: Question [];
+}
