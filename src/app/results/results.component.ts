@@ -7,10 +7,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  public value?: string;
+  public value!: number;
+  public rightAnswersCount!: number;
+  public questionsLength!: number;
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.value = this.activatedRoute.snapshot.queryParamMap.get('result') || '0';
+    this.rightAnswersCount = +(this.activatedRoute.snapshot.queryParamMap.get('rightAnswersCount') || 0);
+    this.questionsLength = +(this.activatedRoute.snapshot.queryParamMap.get('questionsLength') || 0);
+    this.value = (this.rightAnswersCount / this.questionsLength) * 100;
+
   }
 }

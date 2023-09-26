@@ -25,7 +25,8 @@ export class QuestionsListComponent {
   public goToResults() {
     this.router.navigate(['results'], {
       queryParams: {
-        result: (this.rightAnswersCount / this.questions.length) * 100,
+        rightAnswersCount: this.rightAnswersCount,
+        questionsLength: this.questions.length
       },
     });
   }
