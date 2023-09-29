@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AnswersService } from '../answers.service';
 
 @Component({
   selector: 'app-results',
@@ -10,15 +11,30 @@ export class ResultsComponent implements OnInit {
   public value!: number;
   public rightAnswersCount!: number;
   public questionsLength!: number;
-  constructor(private activatedRoute: ActivatedRoute) {}
+
+  private testResultsId!: number;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private answersService: AnswersService
+  ) {}
 
   ngOnInit() {
-    this.rightAnswersCount = +(
-      this.activatedRoute.snapshot.queryParamMap.get('rightAnswersCount') || 0
+    this.testResultsId = +(
+      this.activatedRoute.snapshot.paramMap.get('testResultsId') || 0
     );
-    this.questionsLength = +(
-      this.activatedRoute.snapshot.queryParamMap.get('questionsLength') || 0
-    );
+    if (!this.testResultsId) {
+      throw new Error('testResultsId must be declared');
+    }
+    const testResults = this.answersService.getTestResult(this.testResultsId);
+    if (!testResults) {
+      throw new Error('test result not found');
+    }
+
+    this.rightAnswersCount = testResults.results.filter(
+      (res) => res.isRight
+    ).length;
+    this.questionsLength = testResults.results.length;
     this.value = (this.rightAnswersCount / this.questionsLength) * 100;
   }
 }

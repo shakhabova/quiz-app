@@ -7,12 +7,21 @@ export interface Question {
 }
 
 export interface Answers {
-  answer_a: string;
-  answer_b: string;
-  answer_c?: string;
-  answer_d?: string;
-  answer_e?: string;
-  answer_f?: string;
+  [AnswerNames.Answer_a]: string;
+  [AnswerNames.Answer_b]: string;
+  [AnswerNames.Answer_c]?: string;
+  [AnswerNames.Answer_d]?: string;
+  [AnswerNames.Answer_e]?: string;
+  [AnswerNames.Answer_f]?: string;
+}
+
+export enum AnswerNames {
+  Answer_a = 'answer_a',
+  Answer_b = 'answer_b',
+  Answer_c = 'answer_c',
+  Answer_d = 'answer_d',
+  Answer_e = 'answer_e',
+  Answer_f = 'answer_f',
 }
 
 export interface CorrectAnswers {

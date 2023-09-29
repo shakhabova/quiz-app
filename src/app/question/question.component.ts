@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CorrectAnswers, Question } from '../Question';
+import { AnswerNames, CorrectAnswers, Question } from '../Question';
+import { Result } from '../test-resuts.model';
 
 @Component({
   selector: 'app-question',
@@ -8,14 +9,14 @@ import { CorrectAnswers, Question } from '../Question';
 })
 export class QuestionComponent {
   @Input() public question!: Question;
-  @Output() public answered = new EventEmitter<boolean>();
+  @Output() public answered = new EventEmitter<Result>();
 
-  onChange(answer: string) {
+  onChange(answer: AnswerNames) {
     const correctKey = (answer + '_correct') as keyof CorrectAnswers;
-    if (this.question.correct_answers[correctKey]) {
-      this.answered.emit(true)
-    } else {
-      this.answered.emit(false);
-    }
+    this.answered.emit({
+      questionId: this.question.id,
+      answer,
+      isRight: this.question.correct_answers[correctKey] ?? false,
+    });
   }
 }

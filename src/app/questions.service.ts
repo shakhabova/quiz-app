@@ -60,6 +60,58 @@ export class QuestionsService {
         },
       ],
     },
+    {
+      id: 2,
+      name: 'Past Simple',
+      imageUrl: '/assets/past.jpg',
+      questions: [
+        {
+          id: 4,
+          description: 'They ... last summer',
+          multiple_correct_answers: true,
+          answers: {
+            answer_a: 'didn`t met',
+            answer_b: 'didn`t meeted',
+            answer_c: 'didn`t meet',
+          },
+          correct_answers: {
+            answer_a_correct: false,
+            answer_b_correct: false,
+            answer_c_correct: true,
+          },
+        },
+        {
+          id: 5,
+          description: 'What ... you ... last weekend',
+          multiple_correct_answers: false,
+          answers: {
+            answer_a: 'did do',
+            answer_b: 'did did',
+            answer_c: 'was do',
+          },
+          correct_answers: {
+            answer_a_correct: true,
+            answer_b_correct: false,
+            answer_c_correct: false,
+          },
+        },
+        {
+          id: 6,
+          description: 'Martin ... in 2005',
+          multiple_correct_answers: false,
+          answers: {
+            answer_a: 'was born',
+            answer_b: 'were born',
+            answer_c: 'born',
+          },
+          correct_answers: {
+            answer_a_correct: true,
+            answer_b_correct: false,
+            answer_c_correct: false,
+          },
+        },
+      ],
+    },
   ];
   constructor() {}
 

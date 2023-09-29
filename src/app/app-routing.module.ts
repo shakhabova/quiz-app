@@ -7,7 +7,7 @@ import { TestsListComponent } from './tests-list/tests-list.component';
 const routes: Routes = [
   { path: '', component: TestsListComponent},
   { path: 'questions/:testId', component: QuestionsListComponent },
-  { path: 'results', component: ResultsComponent },
+  { path: 'results/:testResultsId', component: ResultsComponent },
 ];
 
 @NgModule({
