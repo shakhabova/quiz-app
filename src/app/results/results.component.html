@@ -11,3 +11,8 @@
       <p>Выполнено {{rightAnswersCount}} из {{questionsLength}}</p>
     </mat-card-content>
   </mat-card>
+
+  <app-question *ngFor="let question of questions"
+    [question]="question" 
+    [result]="getResult(question.id)"
+  ></app-question>

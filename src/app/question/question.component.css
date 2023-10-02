@@ -3,3 +3,23 @@
     background-color: #f7f7f7;
     margin-bottom: 20px;
 }
+
+.is-right .mdc-label  {
+    color: green !important;
+}
+
+.is-right .mdc-radio__inner-circle, 
+.is-right .mdc-radio__outer-circle {
+    opacity: 1 !important;
+    border-color: green !important;
+}
+
+.is-not-right .mdc-label {
+    color: red !important;
+}
+
+.is-not-right .mdc-radio__inner-circle, 
+.is-not-right .mdc-radio__outer-circle {
+    opacity: 1 !important;
+    border-color: red !important;
+}
