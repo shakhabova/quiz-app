@@ -36,6 +36,6 @@ export interface CorrectAnswers {
 export interface Test {
 id: number;
 name: string;
-imageUrl: string;
+imageUrl?: string;
 questions: Question [];
 }

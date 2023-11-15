@@ -13,6 +13,7 @@ import { ResultsComponent } from './results/results.component';
 import { QuestionsListComponent } from './questions-list/questions-list.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TestsListComponent } from './tests-list/tests-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TestsListComponent } from './tests-list/tests-list.component';
     MatCardModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

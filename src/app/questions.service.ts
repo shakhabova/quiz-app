@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Question, Test } from './Question';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuestionsService {
+  private apiUrl = 'https://quizapi.io/api/v1/questions';
   public tests: Test[] = [
     {
       id: 1,
@@ -113,9 +116,18 @@ export class QuestionsService {
       ],
     },
   ];
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   public getTest(testId: number): Test | undefined {
     return this.tests.find((test) => test.id === testId);
+  }
+
+  public searchTests(): Observable<Test[]> {
+    return this.httpClient.get<Test[]>(this.apiUrl, {
+      params: {
+        apiKey: '35NeB1BsbQ6Tk1BCsDkz5uHPPZxkYKbLR96vu4wq',
+        limit: '1',
+      },
+    });
   }
 }
