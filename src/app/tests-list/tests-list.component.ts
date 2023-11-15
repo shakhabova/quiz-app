@@ -18,10 +18,6 @@ export class TestsListComponent implements OnInit {
 
   ngOnInit() {
     this.tests = this.questionsService.tests;
-    this.questionsService.searchTests()
-      .subscribe(tests => {
-        console.log(tests);
-      });
   }
 
   public startTest(testId: number) {

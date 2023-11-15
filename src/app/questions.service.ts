@@ -126,7 +126,7 @@ export class QuestionsService {
     return this.httpClient.get<Test[]>(this.apiUrl, {
       params: {
         apiKey: '35NeB1BsbQ6Tk1BCsDkz5uHPPZxkYKbLR96vu4wq',
-        limit: '1',
+        
       },
     });
   }

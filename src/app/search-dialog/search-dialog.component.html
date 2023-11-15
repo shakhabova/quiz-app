@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Search Tests</h2>
+<mat-dialog-content [formGroup]="formGroup">
+  <mat-form-field class="search-input">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+  <mat-form-field class="search-input">
+    <mat-label>Category</mat-label>
+    <input matInput formControlName="category" />
+  </mat-form-field>
+  <mat-form-field class="search-input">
+    <mat-label>Test`s size</mat-label>
+    <input matInput formControlName="testsSize" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button>Search</button>
+</mat-dialog-actions>

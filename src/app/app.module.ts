@@ -14,6 +14,14 @@ import { QuestionsListComponent } from './questions-list/questions-list.componen
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TestsListComponent } from './tests-list/tests-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { SearchDialogComponent } from './search-dialog/search-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     QuestionComponent,
     ResultsComponent,
     QuestionsListComponent,
-    TestsListComponent
+    TestsListComponent,
+    HeaderComponent,
+    SearchDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +42,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatProgressSpinnerModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
